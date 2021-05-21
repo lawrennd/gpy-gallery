@@ -1,17 +1,17 @@
 # Site settings
-title: "GPy Examples"
+title: "GPy Gallery"
 description: > # this means to ignore newlines until "baseurl:"
-  Example site for using GPy software.
-baseurl: "/gpy_examples" # the subpath of your site, e.g. /blog/
-url: "http://sheffieldml.github.io" # the base hostname & protocol for your site
-twitter_username: sheffieldml
-github_username:  sheffieldml
+  Gallery of notebook examples of gpy usage.
+baseurl: "/gpy-tutorial" # the subpath of your site, e.g. /blog/
+url: "http://inverseprobability.com" # the base hostname & protocol for your site
+twitter_username: lawrennd
+github_username:  lawrennd
 colab: https://colab.research.google.com
 nbviewer: https://nbviewer.jupyter.org
 
 ghub:
   edit: true
-  repository: gpy_examples
+  repository: gpy-tutorial
 
 author:
   name: Neil D. Lawrence
@@ -41,4 +41,4 @@ remote_theme: lawrennd/proceedings
 
 analytics:
   google:
-    tracking_id: UA-62971049-1
+    tracking_id: UA-62968536-1
