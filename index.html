@@ -1,0 +1,30 @@
+---
+layout: home
+title: GPy Examples
+---
+
+<p>List of GPy Examples.</p>
+
+<div id="sectionnav">
+  <label for="search-authors">Filter Authors:</label>
+  <input type="search" name="filter-authors" id="search-authors" value />
+  <label for="search-titles">Filter Titles:</label>
+  <input type="search" name="filter-titles" id="search-titles" value />
+</div>
+
+{% for example in site.examples  %}
+{% if forloop.first %}
+<h2>Examples</h2>
+<ul>
+  {% endif %}
+  {% include listexample.html %}
+  {% if forloop.last %}
+</ul>
+{% endif %}
+{% endfor %}  
+  
+  <p class="rss-subscribe">subscribe <a href="{{ "/assets/rss/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  
+  <!-- Search Widget -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="./assets/js/search.js"></script>

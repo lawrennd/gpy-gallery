@@ -1,0 +1,11 @@
+{%-include extractinfo_publication.html entry=example-%}
+<div class="paper">
+  <h3 class="title"><a href="{{ url }}">{{ title }}</a><h3>
+  <p class="details">
+    <span class="authors">
+      {%-for person in authors-%}
+      {%-include listperson.html seperator=', '-%}
+      {%-endfor-%}
+    </span>
+  </p>
+</div>
