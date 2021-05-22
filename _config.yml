@@ -17,7 +17,7 @@ author:
   name: Neil D. Lawrence
 
 collections:
-  examples:
+  gallery:
     output: true
 
 display:
