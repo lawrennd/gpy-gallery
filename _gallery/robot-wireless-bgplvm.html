@@ -76,7 +76,7 @@ sns.set_palette('colorblind')}-->
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/robot-wireless-data.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_datasets/includes/robot-wireless-data.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop.</p>
+<p>The robot wireless data is taken from an experiment run by Brian Ferris at University of Washington. It consists of the measurements of WiFi access point signal strengths as Brian walked in a loop. It was published at IJCAI in 2007 <span class="citation" data-cites="Ferris:wifi07">(Ferris et al., 2007)</span>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data<span class="op">=</span>pods.datasets.robot_wireless()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -115,9 +115,18 @@ sns.set_palette('colorblind')}-->
 </div>
 </div>
 <h2 id="bayesian-gp-lvm-fit-to-the-robot-wireless-data">Bayesian GP-LVM fit to the Robot Wireless Data</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gplvm/includes/robot-wireless-bgplvm.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gplvm/includes/robot-wireless-bgplvm.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p>Set up a Bayesian GP-LVM with four latent dimensions.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> GPy.models.BayesianGPLVM(data[<span class="st">&#39;Y&#39;</span>], <span class="dv">4</span>, num_inducing<span class="op">=</span><span class="dv">25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GPy</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> GPy.models.BayesianGPLVM(data[<span class="st">&#39;Y&#39;</span>], <span class="dv">4</span>, num_inducing<span class="op">=</span><span class="dv">25</span>)</span></code></pre></div>
 <p>Optimize the model.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model.optimize(messages<span class="op">=</span><span class="va">True</span>, max_f_eval<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
-<h1 id="references">References</h1>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>model.optimize(messages<span class="op">=</span><span class="va">True</span>, max_f_eval<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
+<h1 class="unnumbered" id="references">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Ferris:wifi07" class="csl-entry" role="doc-biblioentry">
+Ferris, B.D., Fox, D., Lawrence, N.D., 2007. <span>WiFi-SLAM</span> using <span>G</span>aussian process latent variable models, in: Veloso, M.M. (Ed.), Proceedings of the 20th International Joint Conference on Artificial Intelligence (IJCAI 2007). pp. 2480–2485.
+</div>
+</div>
 
