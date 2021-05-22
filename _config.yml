@@ -2,7 +2,7 @@
 title: "GPy Gallery"
 description: > # this means to ignore newlines until "baseurl:"
   Gallery of notebook examples of gpy usage.
-baseurl: "/gpy-tutorial" # the subpath of your site, e.g. /blog/
+baseurl: "/gpy-gallery" # the subpath of your site, e.g. /blog/
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
 github_username:  lawrennd
