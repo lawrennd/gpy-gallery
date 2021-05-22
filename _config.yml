@@ -11,7 +11,7 @@ nbviewer: https://nbviewer.jupyter.org
 
 ghub:
   edit: true
-  repository: gpy-tutorial
+  repository: gpy-gallery
 
 author:
   name: Neil D. Lawrence
