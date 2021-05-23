@@ -3,6 +3,7 @@ title: "Modelling Motion Capture Data with the GP-LVM"
 edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_gpy/cmu-mocap-gplvm.md
 date: 2021-05-19
 published: 2021-05-19
+week: 0
 ipynb: cmu-mocap-gplvm.ipynb
 edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_gpy/cmu-mocap-gplvm.md
 layout: notebook
@@ -57,7 +58,7 @@ sns.set_palette('colorblind')}-->
 <div class="figure">
 <div id="gpy-software-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="../slides/diagrams/gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/gpy-gallery/assets/diagrams//gp/gpy.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="gpy-software-magnify" class="magnify" onclick="magnifyFigure(&#39;gpy-software&#39;)">
@@ -89,6 +90,10 @@ sns.set_palette('colorblind')}-->
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="st">&#39;info&#39;</span>])</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="st">&#39;details&#39;</span>])</span></code></pre></div>
+<h2 id="cmu-motion-capture-gp-lvm">CMU Motion Capture GP-LVM</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/_gplvm/includes/cmu-mocap-gplvm.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/_gplvm/includes/cmu-mocap-gplvm.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p>The original data has the figure moving across the floor during the motion capture sequence. We can make the figure walk ‘in place,’ by setting the x, y, z positions of the root node to zero. This makes it easier to visualize the result.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make figure move in place.</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">&#39;Y&#39;</span>][:, <span class="dv">0</span>:<span class="dv">3</span>] <span class="op">=</span> <span class="fl">0.0</span></span></code></pre></div>
@@ -99,10 +104,9 @@ sns.set_palette('colorblind')}-->
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> GPy.models.GPLVM(Y, <span class="dv">2</span>, normalizer<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <p>Now we optimize the model.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>model.optimize(messages<span class="op">=</span><span class="va">True</span>, max_f_eval<span class="op">=</span><span class="dv">10000</span>)</span></code></pre></div>
-<p>input(‘Press enter to finish’) lvm_visualizer.close() data_show.close()}</p>
 <div class="figure">
 <div id="cmu-mocap-data-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/gplvm/cmu-mocap-gplvm.svg" width="80%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/gpy-gallery/assets/diagrams//gplvm/cmu-mocap-gplvm.svg" width="80%" style=" ">
 </object>
 </div>
 <div id="cmu-mocap-data-magnify" class="magnify" onclick="magnifyFigure(&#39;cmu-mocap-data&#39;)">
@@ -112,10 +116,7 @@ sns.set_palette('colorblind')}-->
 <p>Figure: Gaussian process latent variable model visualisation of CMU motion capture data set.</p>
 </div>
 </div>
-<h1 id="references">References</h1>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/talks/edit/gh-pages/cmu-mocap-gplvm.gpp.markdown" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/talks/edit/gh-pages/cmu-mocap-gplvm.gpp.markdown', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+<h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-CMU-mocap03" class="csl-entry" role="doc-biblioentry">
 CMU Motion Capture Lab, 2003. The <span>CMU</span> mocap database.
